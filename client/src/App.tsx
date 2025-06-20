@@ -1,6 +1,7 @@
 // import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 import "./App.css";
+import ChooseEatery from "./pages/ChooseEatery";
 import Login from "./pages/Login";
 import MainMenu from "./pages/MainMenu";
 import { Link } from "react-router";
@@ -113,6 +114,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/menu" element={<MainMenu></MainMenu>}></Route>
             <Route path="*" element={<NotFound></NotFound>}></Route>
+            <Route path="/choose" element={<ChooseEatery />}></Route>
           </Routes>
         </div>
       </div>

@@ -1,0 +1,17 @@
+
+.left-side {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side {
+  flex: 10; /* adjust ratio as you like */
+  padding: 2rem;
+}
+
+.chit-image {
+  max-width: 100%;
+  height: auto;
+}
