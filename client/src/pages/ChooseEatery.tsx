@@ -127,7 +127,7 @@ function ChooseEatery() {
             value={inputTen}
             onChange={(e) => setInputTen(e.target.value)}
           />
-          <button className="btn go"></button>
+          <button className="choose-eatery-btn"></button>
         </div>
         <div className="right-side">
           
