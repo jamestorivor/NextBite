@@ -18,7 +18,10 @@ function MainMenu() {
           className="btn choose"
           onClick={() => navigate('/choose')}
         ></button>
-        <button className="btn random"></button>
+        <button 
+          className="btn random"
+          onClick={() => navigate('/random')}
+        ></button>
         <button className="btn account"></button>
         <button className="btn settings"></button>
       </div>

@@ -1,0 +1,33 @@
+
+
+.eatery-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  background: url('public/images/bgshop.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Quinlyk Retro Serif', serif;
+}
+
+.center-image {
+  position: absolute;
+  z-index: 1;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.blue-rectangle {
+  position: absolute;
+  width: 517px;
+  height: 95px;
+  background-color: #007bff;
+  border-radius: 0;
+  top: 24.5%;
+  left: 33%;
+  
+  z-index: 2;
+}
