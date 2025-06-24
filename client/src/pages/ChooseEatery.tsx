@@ -24,32 +24,27 @@ function ChooseEatery() {
 export default ChooseEatery;
 */
 
-import './ChooseEatery.css';
-import './MainMenu.css'; 
-import { useState } from 'react';
+import "./ChooseEatery.css";
+import "./MainMenu.css";
+import { useState } from "react";
 
 function ChooseEatery() {
-  const [inputOne, setInputOne] = useState('');
-  const [inputTwo, setInputTwo] = useState('');
-  const [inputThree, setInputThree] = useState('');
-  const [inputFour, setInputFour] = useState('');
-  const [inputFive, setInputFive] = useState('');
-  const [inputSix, setInputSix] = useState('');
-  const [inputSeven, setInputSeven] = useState('');
-  const [inputEight, setInputEight] = useState('');
-  const [inputNine, setInputNine] = useState('');
-  const [inputTen, setInputTen] = useState('');
-
+  const [inputOne, setInputOne] = useState("");
+  const [inputTwo, setInputTwo] = useState("");
+  const [inputThree, setInputThree] = useState("");
+  const [inputFour, setInputFour] = useState("");
+  const [inputFive, setInputFive] = useState("");
+  const [inputSix, setInputSix] = useState("");
+  const [inputSeven, setInputSeven] = useState("");
+  const [inputEight, setInputEight] = useState("");
+  const [inputNine, setInputNine] = useState("");
+  const [inputTen, setInputTen] = useState("");
 
   return (
-    <div className="main-menu"> 
+    <div className="main-menu">
       <div className="choose-eatery-page">
         <div className="left-side">
-          <img
-            src="public/images/chit.jpg"  
-            alt="Chit"
-            className="chit-image"
-          />
+          <img src="images/chit.jpg" alt="Chit" className="chit-image" />
           <input
             type="text"
             className="text-box"
@@ -114,9 +109,9 @@ function ChooseEatery() {
             value={inputNine}
             onChange={(e) => setInputNine(e.target.value)}
           />
-          
+
           <img
-            src="public/images/anyother.jpg"
+            src="images/anyother.jpg"
             alt="Any Other"
             className="anyother-image"
           />
@@ -129,9 +124,7 @@ function ChooseEatery() {
           />
           <button className="choose-eatery-btn"></button>
         </div>
-        <div className="right-side">
-          
-        </div>
+        <div className="right-side"></div>
       </div>
     </div>
   );

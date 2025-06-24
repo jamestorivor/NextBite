@@ -1,26 +1,22 @@
-import './MainMenu.css';
-import { useNavigate } from 'react-router';
-
+import "./MainMenu.css";
+import { useNavigate } from "react-router";
 
 function MainMenu() {
   const navigate = useNavigate();
-  
+
   return (
     <div className="main-menu">
       <div className="menu-container">
-        <img
-          src="public/images/mainmenu.jpg"
-          alt="Menu"
-          className="menu-image"
-        />
-
+        <div className="menu-img">
+          <img src="images/mainmenu.png" alt="menu" className="max-h-[600px]" />
+        </div>
         <button
           className="btn choose"
-          onClick={() => navigate('/choose')}
+          onClick={() => navigate("/choose")}
         ></button>
-        <button 
+        <button
           className="btn random"
-          onClick={() => navigate('/random')}
+          onClick={() => navigate("/random")}
         ></button>
         <button className="btn account"></button>
         <button className="btn settings"></button>
