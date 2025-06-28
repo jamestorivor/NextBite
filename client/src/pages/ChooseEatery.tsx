@@ -27,6 +27,7 @@ export default ChooseEatery;
 import "./ChooseEatery.css";
 import "./MainMenu.css";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function ChooseEatery() {
   const [inputOne, setInputOne] = useState("");
@@ -39,6 +40,7 @@ function ChooseEatery() {
   const [inputEight, setInputEight] = useState("");
   const [inputNine, setInputNine] = useState("");
   const [inputTen, setInputTen] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="main-menu">
@@ -122,7 +124,7 @@ function ChooseEatery() {
             value={inputTen}
             onChange={(e) => setInputTen(e.target.value)}
           />
-          <button className="choose-eatery-btn"></button>
+          <button className="choose-eatery-btn" onClick={() => navigate("/random")}></button>
         </div>
         <div className="right-side"></div>
       </div>

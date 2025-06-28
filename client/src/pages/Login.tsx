@@ -1,4 +1,5 @@
 // import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../components/Button";
 import TextBox from "../components/TextBox";
 
@@ -13,6 +14,27 @@ function Login() {
   //   }
   //   fetchAPI();
   // }, []);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const handleLogin = async () => {
+    try {
+      const res = await fetch("http://localhost:8080/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        console.log("Login successful:", data);
+      
+      } else {
+        setError(data.error || "Login failed");
+      }
+    } catch (err) {
+      setError("Server error");
+    }
+  };
 
   return (
     <>

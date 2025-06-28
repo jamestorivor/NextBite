@@ -39,12 +39,12 @@
 }
 
 .choose-eatery-page .text-box:nth-of-type(1) {
-  top: 36%;
+  top: 35%;
   left: 20%;
 }
 
 .choose-eatery-page .text-box:nth-of-type(2) {
-  top: 42.5%;
+  top: 42%;
   left: 20%
 }
 .choose-eatery-page .text-box:nth-of-type(3) {
@@ -52,28 +52,28 @@
   left: 20%
 }
 .choose-eatery-page .text-box:nth-of-type(4) {
-  top: 55.5%;
+  top: 56%;
   left: 20%
 }
 
 .choose-eatery-page .text-box:nth-of-type(5) {
-  top: 62%;
+  top: 63.5%;
   left: 20%
 }
 .choose-eatery-page .text-box:nth-of-type(6) {
-  top: 68.5%;
+  top: 70.5%;
   left: 20%
 }
 .choose-eatery-page .text-box:nth-of-type(7) {
-  top: 75%;
+  top: 77%;
   left: 20%
 }
 .choose-eatery-page .text-box:nth-of-type(8) {
-  top: 81.5%;
+  top: 84%;
   left: 20%
 }
 .choose-eatery-page .text-box:nth-of-type(9) {
-  top: 87.5%;
+  top: 91%;
   left: 20%
 }
 
@@ -85,7 +85,7 @@
 
 .choose-eatery-page .choose-eatery-btn {
   position: absolute;
-  top: 11.9%;
+  top: 8.6%;
   left: 62.2%;
   transform: translateX(-50%);
   z-index: 1;

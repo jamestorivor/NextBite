@@ -7,6 +7,7 @@ import MainMenu from "./pages/MainMenu";
 import { Link } from "react-router";
 import NotFound from "./pages/NotFound";
 import SampleEatery from "./pages/SampleEatery";
+import Account from "./pages/Account";
 
 function App() {
   // const [array, setArray] = useState([]);
@@ -117,6 +118,7 @@ function App() {
             <Route path="*" element={<NotFound></NotFound>}></Route>
             <Route path="/choose" element={<ChooseEatery />}></Route>
             <Route path="/random" element={<SampleEatery />}></Route>
+            <Route path="/account" element={<Account />}></Route>
           </Routes>
         </div>
       </div>
