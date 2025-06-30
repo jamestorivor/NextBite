@@ -1,0 +1,44 @@
+.paper {
+
+    height: 100%;
+    width: 50%;
+    align-self:center;
+
+}
+
+.signup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.inputbox {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.go-signup {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.go-signup:hover {
+    background-color: #111827;
+}

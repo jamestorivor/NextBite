@@ -8,6 +8,7 @@ import { Link } from "react-router";
 import NotFound from "./pages/NotFound";
 import SampleEatery from "./pages/SampleEatery";
 import Account from "./pages/Account";
+import Signup from "./pages/Signup";
 
 function App() {
   // const [array, setArray] = useState([]);
@@ -119,6 +120,7 @@ function App() {
             <Route path="/choose" element={<ChooseEatery />}></Route>
             <Route path="/random" element={<SampleEatery />}></Route>
             <Route path="/account" element={<Account />}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
           </Routes>
         </div>
       </div>

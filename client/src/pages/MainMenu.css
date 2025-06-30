@@ -44,19 +44,15 @@
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
 .choose {
   top: 31%; left: 11%;
 }
-
 .random {
   top: 31%; left: 51%;
 }
-
 .account {
   top: 60%; left: 11%; 
 }
-
 .settings {
   top: 60%; left: 51%;
 }

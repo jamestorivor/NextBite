@@ -53,7 +53,7 @@ function Login() {
         <div className="divider">OR</div>
 
         <button className="btn bg-white text-black border-[#e5e5e5]">
-          {/* Google login button remains unchanged */}
+          {}
           <svg
             aria-label="Google logo"
             width="16"
@@ -61,7 +61,7 @@ function Login() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
-            <g>
+             <g>
               <path d="m0 0H512V512H0" fill="#fff"></path>
               <path
                 fill="#34a853"
@@ -84,10 +84,9 @@ function Login() {
           Login with Google
         </button>
       </fieldset>
-
       <div className="m-1.5 self-center flex text-sm text-gray-600">
         <p className="pr-1">Don’t have an account? </p>
-        <a href="/" className="hover:text-red-600">
+        <a href="/signup" className="hover:text-red-600">
           Create one here
         </a>
       </div>
