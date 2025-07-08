@@ -1,10 +1,11 @@
 import { Link } from "react-router";
 
-// interface Prop {
-//   style: string;
-// }
+interface Prop {
+  dropDown: Array<string>;
+  path: Array<string>;
+}
 
-function NavBar() {
+function NavBar({ dropDown, path }: Prop) {
   return (
     <div className="flex navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -30,7 +31,12 @@ function NavBar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
+            {dropDown.map((item, index) => (
+              <li>
+                <Link to={"/" + path[index]}>{item}</Link>
+              </li>
+            ))}
+            {/* <li>
               <Link to="/Login">Login</Link>
             </li>
             <li>
@@ -38,7 +44,7 @@ function NavBar() {
             </li>
             <li>
               <Link to="/Menu">Menu</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -50,7 +56,7 @@ function NavBar() {
         </a>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
+        {/* <button className="btn btn-ghost btn-circle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -66,7 +72,7 @@ function NavBar() {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />{" "}
           </svg>
-        </button>
+        </button> */}
         <button className="btn btn-ghost btn-circle">
           <div className="indicator">
             <svg

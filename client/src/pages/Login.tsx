@@ -1,54 +1,46 @@
-import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; // adjust path if needed
+import { useRef, useState } from "react";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../firebase"; // adjust path if needed
 import { useNavigate } from "react-router";
+import { useAuth } from "../contexts/AuthContext";
 
 import Button from "../components/Button";
 import TextBox from "../components/TextBox";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const email = useRef<HTMLInputElement>(null);
+  const password = useRef<HTMLInputElement>(null);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const user = useAuth();
 
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log("Login successful");
-      setError("");
+      await user?.login(email.current?.value, password.current?.value);
       navigate("/menu");
-
     } catch (err: any) {
-      setError(err.message);
+      setError("Invalid password or username\n" + err.message);
     }
   };
+
   return (
     <div className="flex flex-col justify-center items-center">
       <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-sm border p-4">
         <legend className="fieldset-legend text-lg">Login</legend>
 
         <label className="label">Email</label>
-        <TextBox
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <TextBox type="email" placeholder="Email" ref={email} />
 
         <label className="label">Password</label>
-        <TextBox
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <TextBox type="password" placeholder="Password" ref={password} />
 
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
-        <div onClick={handleLogin}>
-          <Button style="btn-neutral mt-4">Login</Button>
-        </div>
+        {/* <div onClick={handleLogin}> */}
+        <Button onClick={handleLogin} style="btn btn-neutral mt-4">
+          Login
+        </Button>
+        {/* </div> */}
 
         <div className="divider">OR</div>
 
@@ -61,7 +53,7 @@ function Login() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
-             <g>
+            <g>
               <path d="m0 0H512V512H0" fill="#fff"></path>
               <path
                 fill="#34a853"
@@ -86,7 +78,7 @@ function Login() {
       </fieldset>
       <div className="m-1.5 self-center flex text-sm text-gray-600">
         <p className="pr-1">Don’t have an account? </p>
-        <a href="/signup" className="hover:text-red-600">
+        <a onClick={() => navigate("/sign up")} className="hover:text-red-600">
           Create one here
         </a>
       </div>
