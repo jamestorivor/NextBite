@@ -12,6 +12,7 @@ import AuthProvider from "./contexts/AuthContext";
 import LoggedInRoutes from "./components/LoggedInRoutes";
 import LoggedOutRoutes from "./components/LoggedOutRoutes";
 import Layout from "./components/Layout";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -28,10 +29,11 @@ function App() {
 
             {/* logged in routes */}
             <Route element={<LoggedInRoutes />}>
-              <Route path="/menu" element={<MainMenu></MainMenu>}></Route>
+              <Route path="/menu" element={<MainMenu />}></Route>
               <Route path="/random" element={<SampleEatery />}></Route>
               <Route path="/choose" element={<ChooseEatery />}></Route>
               <Route path="/account" element={<Account />}></Route>
+              <Route path="/settings" element={<Settings />}></Route>
             </Route>
             <Route path="*" element={<NotFound></NotFound>}></Route>
           </Routes>
