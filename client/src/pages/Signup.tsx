@@ -7,16 +7,15 @@ import { useNavigate } from "react-router";
 import { useAuth } from "../contexts/AuthContext";
 
 function signup() {
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const user = useAuth();
+
   const handleSignup = async () => {
     try {
-      await user?.signup(email, password);
+      await user?.signup(email.current?.value, password.current?.value);
       console.log("Signup done");
       navigate("/menu");
     } catch (err: any) {
@@ -46,7 +45,7 @@ function signup() {
           type="password"
           placeholder="Enter your password here"
           className="inputbox"
-          ref={email}
+          ref={password}
         ></input>
         <button className="go-signup" onClick={handleSignup}>
           Go
