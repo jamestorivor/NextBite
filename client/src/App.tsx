@@ -1,5 +1,5 @@
 // import { useContext } from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import ChooseEatery from "./pages/ChooseEatery";
 import Login from "./pages/Login";
@@ -23,6 +23,7 @@ function App() {
             {/* logged out routes */}
             <Route element={<LoggedOutRoutes />}>
               <Route path="/login" element={<Login />}></Route>
+              
 
               <Route path="/sign up" element={<Signup />}></Route>
             </Route>
@@ -30,8 +31,8 @@ function App() {
             {/* logged in routes */}
             <Route element={<LoggedInRoutes />}>
               <Route path="/menu" element={<MainMenu />}></Route>
-              <Route path="/random" element={<SampleEatery />}></Route>
               <Route path="/choose" element={<ChooseEatery />}></Route>
+              <Route path="/random" element={<SampleEatery />}></Route>
               <Route path="/account" element={<Account />}></Route>
               <Route path="/settings" element={<Settings />}></Route>
             </Route>

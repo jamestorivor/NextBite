@@ -1,7 +1,8 @@
-import { Outlet, Navigate } from "react-router";
+import { Outlet, Navigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 function LoggedInRoutes() {
+  
   const auth = useAuth();
   console.log(auth?.currUser);
 

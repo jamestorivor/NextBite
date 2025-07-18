@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 // import { auth } from "../firebase"; // adjust path if needed
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 import Button from "../components/Button";
