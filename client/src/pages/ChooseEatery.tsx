@@ -39,7 +39,7 @@ function ChooseEatery() {
       console.log("✅ Response status:", res.status);
       if (!res.ok) {
       const errorText = await res.text();
-      console.error("❌ Server returned error:", errorText);
+      console.error("Server returned error:", errorText);
       alert("Server error occurred.");
       return;
     }
@@ -51,13 +51,14 @@ function ChooseEatery() {
         alert("No matching restaurants found.");
         return;
       }
-
-      const chosen = data[Math.floor(Math.random() * data.length)];
+      
+      const chosen = data;
+      /*const chosen = data[Math.floor(Math.random() * data.length)];*/
       console.log(chosen);
       
-      navigate("/random", { state: { restaurant: chosen } });
+      navigate("/random", { state: { restaurant: chosen} });
     } catch (err) {
-      console.error("💥 Fetch failed:", err);
+      console.error("Fetch failed:", err);
       alert("Something went wrong.");
     }
   };

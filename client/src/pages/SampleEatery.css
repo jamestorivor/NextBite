@@ -35,11 +35,43 @@
 .restaurant-name-box {
   margin: 20px auto;
   padding: 10px 16px;
-  font-size: 16px;
+  font-size: 30px;
   width: 300px;
   display: block;
   text-align: center;
-  border: 2px solid #ccc;
+  /*border: 2px solid #ccc;*/
   border-radius: 6px;
-  background-color: #f9f9f9;
+  /*background-color: #f9f9f9;*/
+  z-index: 3;
+  top: 23.5%;
+  position: absolute;
+  font-family: 'Quinlyk Retro Serif', serif;
+  color: white;
+  
+} 
+
+.next-button {
+  background-color: #2563eb; 
+  left: 74%;
+  position: absolute;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.next-button:hover {
+  background-color: #1e40af; /* Tailwind's blue-800 */
+  transform: translateY(-2px);
+}
+
+.next-button:active {
+  background-color: #1e3a8a; /* Tailwind's blue-900 */
+  transform: translateY(0);
 }

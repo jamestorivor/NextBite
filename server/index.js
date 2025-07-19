@@ -29,9 +29,15 @@ app.post("/api/restaurants/search", async (req, res) => {
     keywords.forEach((word, index) => {
       const placeholder1 = `$${values.length + 1}`;
       const placeholder2 = `$${values.length + 2}`;
+      const placeholder3 = `$${values.length + 3}`;
+      const placeholder4 = `$${values.length + 4}`;
+
       conditions.push(`cuisine_type ILIKE ${placeholder1}`);
       conditions.push(`specialties ILIKE ${placeholder2}`);
-      values.push(`%${word}%`, `%${word}%`);
+      conditions.push(`address ILIKE ${placeholder3}`);
+      conditions.push(`name ILIKE ${placeholder4}`);
+
+      values.push(`%${word}%`, `%${word}%`, `%${word}%`, `%${word}%`);
     });
 
     const whereClause = conditions.join(" OR ");
