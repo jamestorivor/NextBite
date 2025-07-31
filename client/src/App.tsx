@@ -1,11 +1,12 @@
 // import { useContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import ChooseEatery from "./pages/ChooseEatery";
 import Login from "./pages/Login";
 import MainMenu from "./pages/MainMenu";
 import NotFound from "./pages/NotFound";
 import SampleEatery from "./pages/SampleEatery";
+import InsideEatery from "./pages/InsideEatery";
 import Account from "./pages/Account";
 import Signup from "./pages/Signup";
 import AuthProvider from "./contexts/AuthContext";
@@ -35,7 +36,9 @@ function App() {
               <Route path="/random" element={<SampleEatery />}></Route>
               <Route path="/account" element={<Account />}></Route>
               <Route path="/settings" element={<Settings />}></Route>
+              <Route path="/inside" element={<InsideEatery />}></Route>
             </Route>
+            <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="*" element={<NotFound></NotFound>}></Route>
           </Routes>
         </Layout>

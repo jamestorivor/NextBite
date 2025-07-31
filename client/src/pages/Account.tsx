@@ -2,6 +2,9 @@ import "./Account.css";
 import "./MainMenu.css";
 import { useState, useEffect } from "react";
 
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "../firebase"; 
+
 function Account() {
     const [accountInfo, setAccountInfo] = useState({
         name: "",
@@ -12,14 +15,34 @@ function Account() {
     });
 
     useEffect(() => {
-        setAccountInfo({
-            name: "Anirudh",
-            email: "anir2212@gmail.com",
-            preferences: "Seafood and Milkshakes",
-            allergies: "Peanuts",
-            restrictions: "None",
-        });
-    }, []);
+    const fetchAccountInfo = async () => {
+      if (!auth.currentUser) 
+        return; 
+
+      const uid = auth.currentUser.uid;
+      const userDocRef = doc(db, "users", uid);
+
+      try {
+        const docSnap = await getDoc(userDocRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setAccountInfo({
+            name: data.name || "",
+            email: data.email || auth.currentUser.email || "",
+            preferences: data.preferences || "",
+            allergies: data.allergies || "",
+            restrictions: data.restrictions || "",
+          });
+        } else {
+          console.log("No such user");
+        }
+      } catch (error) {
+        console.error("Error getting info from user", error);
+      }
+    };
+
+    fetchAccountInfo();
+  }, []);
 
     return (
         <div className="main-menu">

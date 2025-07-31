@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/restaurants/search", async (req, res) => {
-  const { keywords } = req.body;
+  const { keywords, sortOption = "match", location } = req.body;
 
   if (!Array.isArray(keywords) || keywords.length === 0) {
     return res.status(400).json({ error: "No keywords provided" });
@@ -24,33 +24,79 @@ app.post("/api/restaurants/search", async (req, res) => {
 
   try {
     const conditions = [];
-    const values = [];
+const scoreFragments = [];
+const values = [];
 
-    keywords.forEach((word, index) => {
-      const placeholder1 = `$${values.length + 1}`;
-      const placeholder2 = `$${values.length + 2}`;
-      const placeholder3 = `$${values.length + 3}`;
-      const placeholder4 = `$${values.length + 4}`;
+let paramIndex = 1;
 
-      conditions.push(`cuisine_type ILIKE ${placeholder1}`);
-      conditions.push(`specialties ILIKE ${placeholder2}`);
-      conditions.push(`address ILIKE ${placeholder3}`);
-      conditions.push(`name ILIKE ${placeholder4}`);
+keywords.forEach((word) => {
+  const val = `%${word}%`;
 
-      values.push(`%${word}%`, `%${word}%`, `%${word}%`, `%${word}%`);
-    });
+  
+  values.push(val); 
+  conditions.push(`cuisine_type ILIKE $${paramIndex}`);
+  scoreFragments.push(`CASE WHEN cuisine_type ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+  paramIndex++;
+
+  values.push(val); 
+  conditions.push(`specialties ILIKE $${paramIndex}`);
+  scoreFragments.push(`CASE WHEN specialties ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+  paramIndex++;
+
+  values.push(val); 
+  conditions.push(`address ILIKE $${paramIndex}`);
+  scoreFragments.push(`CASE WHEN address ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+  paramIndex++;
+
+  values.push(val); 
+  conditions.push(`name ILIKE $${paramIndex}`);
+  scoreFragments.push(`CASE WHEN name ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+  paramIndex++;
+});
 
     const whereClause = conditions.join(" OR ");
-    const query = `SELECT * FROM restaurants WHERE ${whereClause};`;
+    const scoreExpression = scoreFragments.join(" + ");
+    let query = "";
+    let orderBy = "match_score DESC";
+    let selectDistance = "";
+    let havingLocation = false;
+    
+    if (sortOption === "distance" && location?.lat && location?.lng) {
+      havingLocation = true;
+      values.push(location.lat); 
+      const latParam = `$${paramIndex++}`;
+      values.push(location.lng); 
+      const lngParam = `$${paramIndex++}`;
 
-    console.log("🧪 Final SQL:", query);
-    console.log("📦 Values:", values);
+      selectDistance = `, (
+        6371 * acos(
+          cos(radians(${latParam})) *
+          cos(radians(latitude)) *
+          cos(radians(longitude) - radians(${lngParam})) +
+          sin(radians(${latParam})) *
+          sin(radians(latitude))
+        )
+      ) AS distance`;
+
+      orderBy = "distance ASC";
+    }
+
+    query = `
+      SELECT *, (${scoreExpression}) AS match_score
+      ${selectDistance}
+      FROM restaurants
+      WHERE ${whereClause}
+      ORDER BY ${orderBy}
+      LIMIT 30;
+    `;
+
+    console.log("SQL:", query);
+    console.log("Values:", values);
 
     const { rows } = await pool.query(query, values);
-
     res.json(rows);
   } catch (err) {
-    console.error("💥 Query error:", err.message);
+    console.error("Query error:", err.message);
     res.status(500).json({ error: "Server error" });
   }
 });

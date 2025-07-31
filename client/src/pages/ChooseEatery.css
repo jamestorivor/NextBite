@@ -114,5 +114,44 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
+.back-btn {
+  background-color: #2563eb; 
+  left: 80%;
+  position: absolute;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
 
+.back-btn:hover {
+  background-color: #1e40af; 
+  transform: translateY(-2px);
+}
+
+.back-btn:active {
+  background-color: #1e3a8a; 
+  transform: translateY(0);
+}
+
+
+
+.sort-dropdown {
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  position : absolute;
+  left: 52%;
+  z-index: 10;
+  top: 85%;
+  
+}
 

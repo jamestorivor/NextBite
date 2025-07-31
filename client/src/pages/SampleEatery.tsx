@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SampleEatery.css";
 
@@ -73,6 +73,9 @@ function SampleEatery() {
       />
       <button className = "next-button"
       onClick = {handleNext}> Next </button>
+      <button className = "go-button"
+      onClick={() => navigate("/inside", { state: { restaurant } })}
+> I choose this! </button>
     </div>
   );
 }
