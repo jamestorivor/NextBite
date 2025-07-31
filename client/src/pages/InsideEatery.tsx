@@ -43,7 +43,7 @@ function InsideEatery() {
     <div className="eatery-page">
       
         <img
-          src="images/chit2.png"
+          src="/images/chit2.png"
           alt="Chit paper"
           className="paper-image"
         />

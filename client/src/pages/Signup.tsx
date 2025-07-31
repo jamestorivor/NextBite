@@ -61,7 +61,7 @@ function signup() {
   return (
     <div className="main-menu">
       <img
-        src="images/torn.jpg"
+        src="/images/torn.jpg"
         alt="Signup background"
         className="paper"
       ></img>

@@ -2,6 +2,7 @@ import "./ChooseEatery.css";
 import "./MainMenu.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//import { API_BASE_URL } from "../";
 
 function ChooseEatery() {
   const [inputOne, setInputOne] = useState("");
@@ -94,7 +95,7 @@ function ChooseEatery() {
     <div className="main-menu">
       <div className="choose-eatery-page">
         <div className="left-side">
-          <img src="images/chit.jpg" alt="Chit" className="chit-image" />
+          <img src="/images/chit.jpg" alt="Chit" className="chit-image" />
           <input type="text" className="text-box" placeholder="Enter first value" value={inputOne} onChange={(e) => setInputOne(e.target.value)} />
           <input type="text" className="text-box" placeholder="Enter second value" value={inputTwo} onChange={(e) => setInputTwo(e.target.value)} />
           <input type="text" className="text-box" placeholder="Enter third value" value={inputThree} onChange={(e) => setInputThree(e.target.value)} />
@@ -104,7 +105,7 @@ function ChooseEatery() {
           <input type="text" className="text-box" placeholder="Enter seventh value" value={inputSeven} onChange={(e) => setInputSeven(e.target.value)} />
           <input type="text" className="text-box" placeholder="Enter eighth value" value={inputEight} onChange={(e) => setInputEight(e.target.value)} />
           <input type="text" className="text-box" placeholder="Enter ninth value" value={inputNine} onChange={(e) => setInputNine(e.target.value)} />
-          <img src="images/anyother.jpg" alt="Any Other" className="anyother-image" />
+          <img src="/images/anyother.jpg" alt="Any Other" className="anyother-image" />
           <input type="text" className="text-box" placeholder="Any other requests?" value={inputTen} onChange={(e) => setInputTen(e.target.value)} />
           <select
             className="sort-dropdown"
