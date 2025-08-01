@@ -8,10 +8,7 @@ interface Prop {
 
 function Button({ children, style, onClick }: Prop) {
   return (
-    <button
-      className={"hover:cursor-pointer btn " + style}
-      onClick={onClick}
-    >
+    <button className={"hover:cursor-pointer btn " + style} onClick={onClick}>
       {children}
     </button>
   );

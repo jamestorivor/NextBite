@@ -1,6 +1,6 @@
 
 
-.left-side {
+/* .left-side {
   flex: 1;
   display: flex;
   justify-content: flex-start;
@@ -25,73 +25,13 @@
 .anyother-image {
   max-width: 300%;
   height: auto;
-}
-
-.choose-eatery-page .text-box {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  color: #000;
-  font-weight: bold;
-  z-index: 2;
-  border: 1px solid #ccc;
-}
-
-.choose-eatery-page .text-box:nth-of-type(1) {
-  top: 35%;
-  left: 20%;
-}
-
-.choose-eatery-page .text-box:nth-of-type(2) {
-  top: 42%;
-  left: 20%
-}
-.choose-eatery-page .text-box:nth-of-type(3) {
-  top: 49%;
-  left: 20%
-}
-.choose-eatery-page .text-box:nth-of-type(4) {
-  top: 56%;
-  left: 20%
-}
-
-.choose-eatery-page .text-box:nth-of-type(5) {
-  top: 63.5%;
-  left: 20%
-}
-.choose-eatery-page .text-box:nth-of-type(6) {
-  top: 70.5%;
-  left: 20%
-}
-.choose-eatery-page .text-box:nth-of-type(7) {
-  top: 77%;
-  left: 20%
-}
-.choose-eatery-page .text-box:nth-of-type(8) {
-  top: 84%;
-  left: 20%
-}
-.choose-eatery-page .text-box:nth-of-type(9) {
-  top: 91%;
-  left: 20%
-}
-
-.choose-eatery-page .text-box:nth-of-type(10) {
-  top: 55%;
-  left: 53%;
-}
+} */
 
 
 .choose-eatery-page .choose-eatery-btn {
-  position: absolute;
-  top: 8.6%;
-  left: 62.2%;
-  transform: translateX(-50%);
-  z-index: 1;
 
-  width: 376px;
-  height: 95px;
+  width: 10vw;
+  height: 8vh;
   padding: 0;
 
   border: 2px solid white; 
@@ -104,13 +44,12 @@
   font-size: 1.2rem;
 
   box-shadow: none; 
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    transition-duration: 0.3s;
 }
 
 .choose-eatery-page .choose-eatery-btn:hover {
-  background: rgba(255, 255, 255, 0); 
-  color: #000; 
-  transform: translateX(-50%) scale(1.05);
+  background: rgba(255, 255, 255, 0);  
+  transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
@@ -138,20 +77,34 @@
 .back-btn:active {
   background-color: #1e3a8a; 
   transform: translateY(0);
-}
+} 
 
 
 
 .sort-dropdown {
-  margin: 10px 0;
   padding: 8px;
   font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-  position : absolute;
-  left: 52%;
-  z-index: 10;
-  top: 85%;
-  
+  color: white; 
+}
+
+.choose-eatery-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.order-section{
+  height: 30vh;
+  width: 60vw;
+  background:url("images/torn.jpg") no-repeat center ;
+  background-size: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 

@@ -29,10 +29,15 @@ function Login() {
         <legend className="fieldset-legend text-lg">Login</legend>
 
         <label className="label">Email</label>
-        <TextBox type="email" placeholder="Email" ref={email} />
+        <TextBox type="email" placeholder="Email" ref={email} style="" />
 
         <label className="label">Password</label>
-        <TextBox type="password" placeholder="Password" ref={password} />
+        <TextBox
+          type="password"
+          placeholder="Password"
+          ref={password}
+          style=""
+        />
 
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
