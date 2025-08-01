@@ -4,6 +4,7 @@ import "./ChooseEatery.css";
 import "./MainMenu.css";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+//import { API_BASE_URL } from "../";
 
 function ChooseEatery() {
   // const [inputOne, setInputOne] = useState("");

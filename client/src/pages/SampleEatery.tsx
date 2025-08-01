@@ -67,7 +67,7 @@ function SampleEatery() {
       />
 
       <img
-        src="images/samplestall.jpg"
+        src="/images/samplestall.jpg"
         alt="Sample Stall"
         className="center-image"
       />

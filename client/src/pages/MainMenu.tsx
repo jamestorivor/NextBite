@@ -8,7 +8,7 @@ function MainMenu() {
     <div className="main-menu">
       <div className="menu-container">
         <div className="menu-img">
-          <img src="images/mainmenu.png" alt="menu" className="max-h-[600px]" />
+          <img src="/images/mainmenu.png" alt="menu" className="max-h-[600px]" />
         </div>
         <button
           className="btn choose"

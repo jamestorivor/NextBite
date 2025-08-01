@@ -48,7 +48,7 @@ function Account() {
         <div className="main-menu">
             <div className="account-container">
                 <img
-                    src="images/parch.jpg"
+                    src="/images/parch.jpg"
                     alt="account-information"
                     className="parch"
                 />
