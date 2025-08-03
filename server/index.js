@@ -9,13 +9,16 @@ const app = express();
 // };
 
 // app.use(cors(corsOptions));
-app.use(cors({
+
+const corsOptions = {
   origin: 'https://next-bite-nu.vercel.app', // allow only your frontend
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true // if needed (e.g., cookies or auth headers)
-}));
+}
+app.use(cors(corsOptions));
 app.use(express.json());
-app.options("*", cors())
+
+app.options("*", cors(corsOptions))
 
 app.get("/", (req, res) => {
   res.json({ message: "Server is running" });
