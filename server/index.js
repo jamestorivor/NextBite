@@ -5,7 +5,7 @@ const pool = require("./db");
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: ["'https://next-bite-nu.vercel.app'"],
 };
 
 app.use(cors(corsOptions));
