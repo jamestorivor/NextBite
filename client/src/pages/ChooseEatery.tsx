@@ -47,15 +47,18 @@ function ChooseEatery() {
     try {
       console.log("searching");
       console.log(output);
-      const res = await fetch("http://localhost:8080/api/restaurants/search", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          keywords: output,
-          sortOption,
-          location: userLocation,
-        }),
-      });
+      const res = await fetch(
+        "https://nextbite-aq1f.onrender.com/api/restaurants/search",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            keywords: output,
+            sortOption,
+            location: userLocation,
+          }),
+        }
+      );
       console.log("Response status:", res.status);
       if (!res.ok) {
         const errorText = await res.text();
