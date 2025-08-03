@@ -5,22 +5,12 @@ const restaurantRouter = require('./routes/restaurants');
 
 const app = express();
 
-// const corsOptions = {
-//   origin: ["'https://next-bite-nu.vercel.app'"],
-// };
-
-// app.use(cors(corsOptions));
-
 const corsOptions = {
-  origin: 'https://next-bite-nu.vercel.app', // allow only your frontend
-  methods: ['GET', 'POST', 'OPTIONS'],
-  credentials: true // if needed (e.g., cookies or auth headers)
+  origin: ['https://next-bite-nu.vercel.app'],
+  methods: ['GET', 'POST', 'OPTIONS']
 }
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use("/api/restaurants", restaurantRouter)
-
-app.options("*", cors(corsOptions))
 
 app.get("/", (req, res) => {
   res.json({ message: "Server is running" });
