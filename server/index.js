@@ -4,12 +4,18 @@ const pool = require("./db");
 
 const app = express();
 
-const corsOptions = {
-  origin: ["'https://next-bite-nu.vercel.app'"],
-};
+// const corsOptions = {
+//   origin: ["'https://next-bite-nu.vercel.app'"],
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://next-bite-nu.vercel.app', // allow only your frontend
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true // if needed (e.g., cookies or auth headers)
+}));
 app.use(express.json());
+app.options("*", cors())
 
 app.get("/", (req, res) => {
   res.json({ message: "Server is running" });
