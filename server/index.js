@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const pool = require("./db"); 
+const restaurantRouter = require('./routes/restaurants');
 
 const app = express();
 
@@ -17,6 +18,7 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use("/api/restaurants", restaurantRouter)
 
 app.options("*", cors(corsOptions))
 
