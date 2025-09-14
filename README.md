@@ -3,7 +3,7 @@ AI-integrated web application that finds the closest hawker center in Singapore 
 
 **Link to project**:[Project page](https://next-bite-nu.vercel.app/menu)
 
-## How its made
+## Overview
 **Tech Used**
 - Frontend : React (TypeScript) , HTML, CSS, TailwindCSS, DaisyUI
 - Backend : Node.js, Express.js, PostgreSQL (hosted on AWS), Firebase
@@ -18,6 +18,8 @@ Used Firebase to handle authentication and secure the application.
 Created a Named Entity Recognition model fine-tuned to include Singapore food names, using Hugging Face and Pytorch.
 The model is hosted on Hugging Face spaces. 
 
+
+## How its made
 **Main Pages of App**
 * Choose an Eatery – Free-form preference entry processed with NLP
 * Random Eatery – Suggestions based on behavior or at random
