@@ -26,7 +26,7 @@ The model is hosted on Hugging Face spaces.
 * Curated Showcase – Detailed cards for matched food spots
 * Account – Profiles storing preferences, allergies, etc.
 
-### 3.1 Main Menu Page
+### Main Menu Page
 
 ![Home Page Image](./readMeImgs/HomePage.png)
 
@@ -37,7 +37,7 @@ The Main Menu serves as the app’s central control panel, offering clear naviga
 The Main Menu design prioritizes simplicity, accessibility, and responsiveness using React components styled with Tailwind CSS to provide a clean, modern interface suitable for multiple device sizes.
 The frontend is also developed in a manner that captures users’ attention while signifying that it is an app for recommending food or restaurants, with the diner's appearance portrayed by the app itself.
 
-### 3.2 Choose an Eatery Page
+### Choose an Eatery Page
 ![ChooseEatery Page Image](./readMeImgs/ChooseEatery.png)
 
 A critical innovation of NextBite is the flexible preference input method. This page currently features a search query style input box where users can stack multiple preferences that they have together.
@@ -50,7 +50,7 @@ So all of these requests can be stacked in the form of “I am looking for a qui
 Upon submission, these inputs are parsed by our NLP module to extract meaningful keywords, phrases, and sentiment to query the restaurant database for matches. Currently, this module supports basic keyword extraction and phrase matching, with plans to incorporate more advanced semantic analysis. 
 For example, currently this search query is able to accurately identify the food type that you’re looking for, such as “I want Indian food” or “I want Sushi”. The atmosphere and budget setting are currently being worked on and will soon be available. 
 
-### 3.3 Random Eatery Suggestion
+### Random Eatery Suggestion
 
 ![RandomEatery Page Image](./readMeImgs/RandomEatery.png)
 
@@ -60,7 +60,7 @@ To encourage discovery and serendipity, NextBite includes a feature offering ran
 * A purely random selection to inspire exploration.
 This feature is currently still under work as with the upscaling of our data, we are trying to match user preferences with the other data that we have, and will be soon available too.
 
-## 3.4 Account Management
+### Account Management
 
 ![Account Page Image](./readMeImgs/Account.png)
 
@@ -74,7 +74,7 @@ Each account allows the user to provide a series of information when they first 
 This information would then be securely stored in Firestore Firebase to ensure that this sensitive user data is protected. This information is also being integrated into our Random Eatery Page, such that we are able to recommend restaurants to users that follow their food preferences and also avoid their allergies and any dietary restrictions they may have. 
 
 
-## 3.5 Curated Restaurants Showcase Page
+### Curated Restaurants Showcase Page
 This page displays a curated list of eateries matching user preferences. Each listing features:
 The restaurant’s name and location.
 Current promotional deals or discounts.
