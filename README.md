@@ -58,7 +58,7 @@ To encourage discovery and serendipity, NextBite includes a feature offering ran
 * A purely random selection to inspire exploration.
 This feature is currently still under work as with the upscaling of our data, we are trying to match user preferences with the other data that we have, and will be soon available too.
 
-3.4 Account Management
+## 3.4 Account Management
 
 ![Account Page Image](./readMeImgs/Account.png)
 
@@ -72,7 +72,7 @@ Each account allows the user to provide a series of information when they first 
 This information would then be securely stored in Firestore Firebase to ensure that this sensitive user data is protected. This information is also being integrated into our Random Eatery Page, such that we are able to recommend restaurants to users that follow their food preferences and also avoid their allergies and any dietary restrictions they may have. 
 
 
-3.5 Curated Restaurants Showcase Page
+## 3.5 Curated Restaurants Showcase Page
 This page displays a curated list of eateries matching user preferences. Each listing features:
 The restaurant’s name and location.
 Current promotional deals or discounts.
@@ -98,7 +98,7 @@ Now, from this database, it is evident that for Western restaurants, we have Swe
 ![FoodPlace2](./readMeImgs/nil.png)
 ![FoodPlace3](./readMeImgs/nil.png)
 
-3. Technical Architecture
+## Technical Architecture
 Our frontend is developed using React.js, a powerful JavaScript library renowned for its component-based architecture. This architecture promotes modularity, making it easier to maintain, scale, and reuse code across various parts of the application. React's virtual DOM and state management features allow us to build dynamic and interactive user interfaces that respond efficiently to user input.
 For styling, we’ve integrated Tailwind CSS, a utility-first CSS framework that enables rapid development without the need for writing custom CSS from scratch. Tailwind’s predefined utility classes help maintain a consistent design system while accelerating the development process. It also ensures our UI remains highly responsive across a wide range of screen sizes, making the application mobile-friendly and adaptable to modern design standards.
 To manage client-side routing, we’ve implemented React Router, which enables smooth and intuitive navigation throughout the application. React Router allows for the creation of nested routes and dynamic parameters, supporting a true single-page application (SPA) experience. This ensures that user sessions remain uninterrupted and transitions between pages feel seamless, enhancing the overall usability of the platform.
@@ -108,7 +108,7 @@ On the other hand, PostgreSQL serves as the backbone for managing our structured
 By strategically combining Firestore and PostgreSQL, our backend achieves the best of both worlds—real-time, flexible handling of user-specific data via Firestore, and robust, structured storage of restaurant information using PostgreSQL. This dual-database architecture enables us to deliver a seamless, scalable, and efficient experience to users, while maintaining strong backend reliability and performance.
 
 
-4. Natural Language Processing Module
+## Natural Language Processing Module
 
 Natural Language Processing is at the heart of NextBite's innovation. The app employs transformer-based models (particularly BERT from Hugging Face) to convert user-entered sentences into semantic vectors. These vectors represent the deeper meaning behind the input, allowing us to move beyond simple keyword matching. For instance, phrases like "a place with crispy food that's not too spicy" are parsed for texture, flavor, and negation—all of which are tokenized, embedded, and matched against pre-processed review data.
 Our semantic pipeline supports both sentence-level classification and phrase-level entity recognition. This dual-layered approach allows us to extract user intent (e.g., desire for ambiance, dietary need, food type) while also preserving specific constraints (e.g., distance, pricing, crowd levels). Matching is performed using cosine similarity on high-dimensional vectors, ensuring that the restaurants recommended are not just relevant but aligned with both stated and inferred preferences.
@@ -120,8 +120,7 @@ Restaurants are displayed based on match confidence, calculated from semantic si
 Currently, there are further improvements being carried out to the model such that identifications of adjectives tied to food can be observed and then categorized. For example, if the user were to ask for soft noodles, a more intricate analysis of the Database can take place, such that the restaurant recommendations given to the user are further curated. 
 As for budget tracking, this is also tied to analysis of reviews and the offering of the menu by the restaurant page, after which we are able to make a decision as to whether the meals would fit within the budget. 
 
-
-5. Backend and Database
+## Backend and Database
 
 We employ PostgreSQL as our primary database to store restaurant data. This choice allows complex queries involving filtering by multiple attributes, joins, and sorting by relevance or rating. Our schema includes a table that currently takes in: 
 Restaurant name
