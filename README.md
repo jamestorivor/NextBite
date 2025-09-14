@@ -2,6 +2,7 @@
 AI-integrated web application that finds the closest hawker center in Singapore to you based on requests in Natural Language.
 
 **Link to project**:[Project page](https://next-bite-nu.vercel.app/menu)
+![Home Page Image](./readMeImgs/HomePage.png)
 
 ## How its made
 **Tech Used**
