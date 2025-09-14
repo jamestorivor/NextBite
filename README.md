@@ -1,7 +1,7 @@
 # NextBite
 AI-integrated web application that finds the closest hawker center in Singapore to you based on requests in Natural Language.
 
-**Link to project**:[https://next-bite-nu.vercel.app/menu]
+**Link to project**:[Project page](https://next-bite-nu.vercel.app/menu)
 
 ## How its made
 **Tech Used**
