@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const pool = require("./db"); 
-const restaurantRouter = require('./routes/restaurants');
 
 const app = express();
 
@@ -25,35 +24,35 @@ app.post("/api/restaurants/search", async (req, res) => {
 
   try {
     const conditions = [];
-const scoreFragments = [];
-const values = [];
+    const scoreFragments = [];
+    const values = [];
 
-let paramIndex = 1;
+    let paramIndex = 1;
 
-keywords.forEach((word) => {
-  const val = `%${word}%`;
+    keywords.forEach((word) => {
+      const val = `%${word}%`;
 
-  
-  values.push(val); 
-  conditions.push(`cuisine_type ILIKE $${paramIndex}`);
-  scoreFragments.push(`CASE WHEN cuisine_type ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
-  paramIndex++;
+      
+      values.push(val); 
+      conditions.push(`cuisine_type ILIKE $${paramIndex}`);
+      scoreFragments.push(`CASE WHEN cuisine_type ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+      paramIndex++;
 
-  values.push(val); 
-  conditions.push(`specialties ILIKE $${paramIndex}`);
-  scoreFragments.push(`CASE WHEN specialties ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
-  paramIndex++;
+      values.push(val); 
+      conditions.push(`specialties ILIKE $${paramIndex}`);
+      scoreFragments.push(`CASE WHEN specialties ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+      paramIndex++;
 
-  values.push(val); 
-  conditions.push(`address ILIKE $${paramIndex}`);
-  scoreFragments.push(`CASE WHEN address ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
-  paramIndex++;
+      values.push(val); 
+      conditions.push(`address ILIKE $${paramIndex}`);
+      scoreFragments.push(`CASE WHEN address ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+      paramIndex++;
 
-  values.push(val); 
-  conditions.push(`name ILIKE $${paramIndex}`);
-  scoreFragments.push(`CASE WHEN name ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
-  paramIndex++;
-});
+      values.push(val); 
+      conditions.push(`name ILIKE $${paramIndex}`);
+      scoreFragments.push(`CASE WHEN name ILIKE $${paramIndex} THEN 1 ELSE 0 END`);
+      paramIndex++;
+    });
 
     const whereClause = conditions.join(" OR ");
     const scoreExpression = scoreFragments.join(" + ");
