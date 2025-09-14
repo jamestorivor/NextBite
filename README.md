@@ -19,10 +19,10 @@ Created a Named Entity Recognition model fine-tuned to include Singapore food na
 The model is hosted on Hugging Face spaces. 
 
 **Main Pages of App**
-• Choose an Eatery – Free-form preference entry processed with NLP
-• Random Eatery – Suggestions based on behavior or at random
-• Curated Showcase – Detailed cards for matched food spots
-• Account – Profiles storing preferences, allergies, etc.
+* Choose an Eatery – Free-form preference entry processed with NLP
+* Random Eatery – Suggestions based on behavior or at random
+* Curated Showcase – Detailed cards for matched food spots
+* Account – Profiles storing preferences, allergies, etc.
 
 ### 3.1 Main Menu Page
 
