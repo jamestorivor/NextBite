@@ -18,7 +18,7 @@ Used Firebase to handle authentication and secure the application.
 Created a Named Entity Recognition model fine-tuned to include Singapore food names, using Hugging Face and Pytorch.
 The model is hosted on Hugging Face spaces. 
 
-Main Pages of App
+**Main Pages of App**
 • Choose an Eatery – Free-form preference entry processed with NLP
 • Random Eatery – Suggestions based on behavior or at random
 • Curated Showcase – Detailed cards for matched food spots
