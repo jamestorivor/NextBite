@@ -37,7 +37,7 @@ The Main Menu serves as the app’s central control panel, offering clear naviga
 * Random Eatery: Provides spontaneous dining suggestions, factoring in recent user behavior and preferences. (Currently being updated due to the upscaling of data in the database)
 * Account Management: Allows users to manage profile details, including allergy information, preferences, and religious restrictions. 
 The Main Menu design prioritizes simplicity, accessibility, and responsiveness using React components styled with Tailwind CSS to provide a clean, modern interface suitable for multiple device sizes.
-The frontend is also developed in a manner that captures users’ attention while signifying that it is an app for recommending food or restaurants, with the diner's appearance portrayed by the app itself.
+The frontend is also developed in a manner that captures users’ attention while signifying that it is an app for recommending food or restaurants, with the restaurant's appearance portrayed by the app itself.
 
 ### Choose an Eatery Page
 ![ChooseEatery Page Image](./readMeImgs/ChooseEatery.png)
