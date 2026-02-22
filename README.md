@@ -12,7 +12,7 @@ AI-integrated web application that finds the closest hawker center in Singapore 
 - AI/ML : Pytorch, Hugging Face
 
 Created the UI/UX using React and TailwindCSS. 
-The UI/UX design was created with inspiration from the hawkers in Singapore. 
+The UI/UX design was created with inspiration from the hawker stalls in Singapore. 
 
 Used Express.js to serve a RESTful API and handle query requests to PostgreSQL database hosted on AWS. 
 Used Firebase to handle authentication and secure the application.
